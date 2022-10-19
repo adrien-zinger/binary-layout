@@ -106,7 +106,8 @@ macro_rules! define_layout {
                     ```
                     "},
                     pub struct View<S: AsRef<[u8]>> {
-                        storage: S,
+                        /// binary container, might be &[u8], &mut [u8] or owned Vec<u8>
+                        pub storage: S,
                     }
                 }
                 impl <S: AsRef<[u8]>> View<S> {
